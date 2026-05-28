@@ -172,6 +172,21 @@ class CognitiveMemorySystem:
         self.attention_budget = 100.0
         logger.info("Cognitive Memory System online (episodic + semantic + procedural)")
         
+    @property
+    def episodic_memory(self):
+        """Access episodic memory episodes for metrics."""
+        return self.episodic.episodes
+        
+    def store_episodic(self, content: Any, valence: float = 0.0, arousal: float = 0.0,
+                       importance: float = 0.5):
+        """Convenience method to store an episodic memory directly."""
+        self.episodic.store(content, valence=valence, arousal=arousal, importance=importance)
+        
+    def recall_episodic(self, context: Dict = None, top_k: int = 5) -> List[Dict]:
+        """Convenience method to recall episodic memories."""
+        recent = self.episodic.recall_recent(top_k)
+        return [{"content": m.content, "valence": m.valence, "importance": m.importance} for m in recent]
+
     def process_experience(self, event: Dict):
         """Process a game experience into appropriate memory systems."""
         # Store as episode

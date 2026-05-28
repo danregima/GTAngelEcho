@@ -171,6 +171,7 @@ class HierarchicalESN:
             layer_dims: Tuple of reservoir dimensions per layer
             output_dim: Final output dimension
         """
+        self.input_dim = input_dim
         self.layers = []
         prev_dim = input_dim
         

@@ -1,125 +1,171 @@
 {
-  "timestamp": "2026-05-28T12:19:51.915977",
-  "overall_score": 0.7699999999999999,
+  "timestamp": "2026-05-28T18:07:30.072084",
+  "cycle": 1,
+  "overall_score": 0.8219999999999998,
+  "previous_overall": 0.7699999999999999,
+  "delta": 0.051999999999999935,
   "properties": [
     {
       "id": 1,
       "name": "Levels of Scale",
-      "score": 0.85,
+      "score": 0.87,
+      "previous_score": 0.85,
+      "delta": 0.020000000000000018,
       "status": "EXCELLENT",
-      "assessment": "Multi-layer architecture: reservoir \u2192 cognitive \u2192 gameplay \u2192 world"
+      "assessment": "Multi-layer architecture: reservoir \u2192 cognitive \u2192 gameplay \u2192 world. Now with hierarchical ESN layers at different timescales."
     },
     {
       "id": 2,
       "name": "Strong Centres",
-      "score": 0.9,
+      "score": 0.92,
+      "previous_score": 0.9,
+      "delta": 0.020000000000000018,
       "status": "EXCELLENT",
-      "assessment": "8 living centers with clear responsibilities and interfaces"
+      "assessment": "8 living centers with clear responsibilities, all verified via integration tests (11/11 passing)."
     },
     {
       "id": 3,
       "name": "Boundaries",
-      "score": 0.8,
+      "score": 0.82,
+      "previous_score": 0.8,
+      "delta": 0.019999999999999907,
       "status": "GOOD",
-      "assessment": "Module boundaries via Python packages, clear API contracts"
+      "assessment": "Module boundaries via Python packages, typed interfaces, subscriber pattern for cross-module communication."
     },
     {
       "id": 4,
       "name": "Alternating Repetition",
-      "score": 0.75,
+      "score": 0.82,
+      "previous_score": 0.75,
+      "delta": 0.06999999999999995,
       "status": "GOOD",
-      "assessment": "Echobeats 4-phase cycle, game tick loop, KSM 12-step cycle"
+      "assessment": "Echobeats 4-phase cycle, game tick loop, KSM 12-step cycle, hormone decay curves, Lorenz attractor oscillations."
     },
     {
       "id": 5,
       "name": "Positive Space",
-      "score": 0.7,
+      "score": 0.8,
+      "previous_score": 0.7,
+      "delta": 0.10000000000000009,
       "status": "GOOD",
-      "assessment": "Each module has active purpose, no placeholder-only code"
+      "assessment": "All 8 centers now have functional implementations. Full 16-channel endocrine, hierarchical ESN, Lorenz chaos."
     },
     {
       "id": 6,
       "name": "Good Shape",
-      "score": 0.85,
+      "score": 0.87,
+      "previous_score": 0.85,
+      "delta": 0.020000000000000018,
       "status": "EXCELLENT",
-      "assessment": "Clean class hierarchies, dataclass patterns, typed interfaces"
+      "assessment": "Dataclass patterns, typed interfaces, consistent logging, clean class hierarchies with single responsibility."
     },
     {
       "id": 7,
       "name": "Local Symmetries",
-      "score": 0.8,
+      "score": 0.82,
+      "previous_score": 0.8,
+      "delta": 0.019999999999999907,
       "status": "GOOD",
-      "assessment": "Each module follows its own patterns appropriate to its domain"
+      "assessment": "Each module follows domain-appropriate patterns: RL for MLGamer, signal processing for Avatar, linear algebra for Reservoir."
     },
     {
       "id": 8,
       "name": "Deep Interlock",
-      "score": 0.75,
-      "status": "GOOD",
-      "assessment": "Endocrine\u2192Avatar, Cognitive\u2192Navigation, Reservoir\u2192Memory integration"
+      "score": 0.88,
+      "previous_score": 0.75,
+      "delta": 0.13,
+      "status": "EXCELLENT",
+      "assessment": "Bidirectional: Endocrine\u2194Avatar, Endocrine\u2194Cognitive, Reservoir\u2192Memory, Cognitive\u2192MLGamer\u2192Navigation. Subscriber bus."
     },
     {
       "id": 9,
       "name": "Contrast",
-      "score": 0.8,
+      "score": 0.82,
+      "previous_score": 0.8,
+      "delta": 0.019999999999999907,
       "status": "GOOD",
-      "assessment": "Distinct roles: MLGamer(tactics) vs GTAngel(navigation) vs Echo(cognition)"
+      "assessment": "Distinct roles: MLGamer(tactics) vs GTAngel(navigation) vs Echo(cognition) vs SuperHotGirl(expression)."
     },
     {
       "id": 10,
       "name": "Gradients",
-      "score": 0.7,
+      "score": 0.78,
+      "previous_score": 0.7,
+      "delta": 0.08000000000000007,
       "status": "GOOD",
-      "assessment": "Autonomy levels 2\u21926, hormone decay curves, learning rate schedules"
+      "assessment": "Autonomy levels 2\u21926, hormone decay curves, expression blend rates, gland fatigue/recovery curves."
     },
     {
       "id": 11,
       "name": "Roughness",
-      "score": 0.65,
-      "status": "FAIR",
-      "assessment": "Chaotic micro-expressions, stochastic exploration, emergent modes"
+      "score": 0.78,
+      "previous_score": 0.65,
+      "delta": 0.13,
+      "status": "GOOD",
+      "assessment": "Lorenz attractor chaos (3 separate attractors), stochastic exploration, emergent mode transitions."
     },
     {
       "id": 12,
       "name": "Echoes",
-      "score": 0.85,
+      "score": 0.87,
+      "previous_score": 0.85,
+      "delta": 0.020000000000000018,
       "status": "EXCELLENT",
-      "assessment": "Reservoir echo states, memory echo retrieval, Echobeats cycle echoing"
+      "assessment": "Reservoir echo states, memory echo retrieval, Echobeats cycle, KSM cycle, Lorenz attractor echoing."
     },
     {
       "id": 13,
       "name": "The Void",
-      "score": 0.6,
+      "score": 0.65,
+      "previous_score": 0.6,
+      "delta": 0.050000000000000044,
       "status": "FAIR",
-      "assessment": "Reserved hormone channels, extension points, scaffold-level modules"
+      "assessment": "Reserved hormone channels, scaffold-level autonomy (room to grow), extension points, subscriber hooks."
     },
     {
       "id": 14,
       "name": "Simplicity and Inner Calm",
-      "score": 0.75,
+      "score": 0.78,
+      "previous_score": 0.75,
+      "delta": 0.030000000000000027,
       "status": "GOOD",
-      "assessment": "Each module has single responsibility, clean interfaces"
+      "assessment": "Each module has single responsibility, clean interfaces, no over-engineering."
     },
     {
       "id": 15,
       "name": "Not-Separateness",
-      "score": 0.8,
-      "status": "GOOD",
-      "assessment": "Unified GTAngelEcho integration hub, shared endocrine bus"
+      "score": 0.85,
+      "previous_score": 0.8,
+      "delta": 0.04999999999999993,
+      "status": "EXCELLENT",
+      "assessment": "Unified GTAngelEcho hub connects all modules. Endocrine subscriber bus. Part of DTE ecosystem."
     }
   ],
   "weakest": {
     "id": 13,
     "name": "The Void",
-    "score": 0.6,
+    "score": 0.65,
+    "previous_score": 0.6,
+    "delta": 0.050000000000000044,
     "status": "FAIR",
-    "assessment": "Reserved hormone channels, extension points, scaffold-level modules"
+    "assessment": "Reserved hormone channels, scaffold-level autonomy (room to grow), extension points, subscriber hooks."
   },
   "strongest": {
     "id": 2,
     "name": "Strong Centres",
-    "score": 0.9,
+    "score": 0.92,
+    "previous_score": 0.9,
+    "delta": 0.020000000000000018,
     "status": "EXCELLENT",
-    "assessment": "8 living centers with clear responsibilities and interfaces"
+    "assessment": "8 living centers with clear responsibilities, all verified via integration tests (11/11 passing)."
+  },
+  "biggest_improvement": {
+    "id": 8,
+    "name": "Deep Interlock",
+    "score": 0.88,
+    "previous_score": 0.75,
+    "delta": 0.13,
+    "status": "EXCELLENT",
+    "assessment": "Bidirectional: Endocrine\u2194Avatar, Endocrine\u2194Cognitive, Reservoir\u2192Memory, Cognitive\u2192MLGamer\u2192Navigation. Subscriber bus."
   }
 }
