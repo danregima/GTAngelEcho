@@ -1,171 +1,208 @@
 {
-  "timestamp": "2026-05-28T18:07:30.072084",
-  "cycle": 1,
-  "overall_score": 0.8219999999999998,
-  "previous_overall": 0.7699999999999999,
-  "delta": 0.051999999999999935,
+  "timestamp": "2026-05-28T20:26:01.355093",
+  "cycle": 2,
+  "overall_score": 0.8593333333333334,
+  "cycle_1_overall": 0.8219999999999998,
+  "cycle_0_overall": 0.7699999999999999,
+  "delta_1_2": 0.03733333333333355,
   "properties": [
     {
       "id": 1,
       "name": "Levels of Scale",
-      "score": 0.87,
-      "previous_score": 0.85,
-      "delta": 0.020000000000000018,
+      "score": 0.88,
+      "cycle_0": 0.85,
+      "cycle_1": 0.87,
+      "delta_1_2": 0.010000000000000009,
+      "delta_0_2": 0.030000000000000027,
       "status": "EXCELLENT",
-      "assessment": "Multi-layer architecture: reservoir \u2192 cognitive \u2192 gameplay \u2192 world. Now with hierarchical ESN layers at different timescales."
+      "assessment": "5 levels: System \u2192 Centers \u2192 Modules \u2192 Functions \u2192 Plugins. Plugin hierarchy adds extensible 5th level."
     },
     {
       "id": 2,
       "name": "Strong Centres",
-      "score": 0.92,
-      "previous_score": 0.9,
-      "delta": 0.020000000000000018,
+      "score": 0.93,
+      "cycle_0": 0.9,
+      "cycle_1": 0.92,
+      "delta_1_2": 0.010000000000000009,
+      "delta_0_2": 0.030000000000000027,
       "status": "EXCELLENT",
-      "assessment": "8 living centers with clear responsibilities, all verified via integration tests (11/11 passing)."
+      "assessment": "8 core centers + 3 extension centers (EventBus, PluginRegistry, HookSystem). All strongly defined with tests."
     },
     {
       "id": 3,
       "name": "Boundaries",
-      "score": 0.82,
-      "previous_score": 0.8,
-      "delta": 0.019999999999999907,
-      "status": "GOOD",
-      "assessment": "Module boundaries via Python packages, typed interfaces, subscriber pattern for cross-module communication."
+      "score": 0.87,
+      "cycle_0": 0.8,
+      "cycle_1": 0.82,
+      "delta_1_2": 0.050000000000000044,
+      "delta_0_2": 0.06999999999999995,
+      "status": "EXCELLENT",
+      "assessment": "PluginBase ABC, HookPoint enum, API route registration \u2014 explicit, well-typed boundaries."
     },
     {
       "id": 4,
       "name": "Alternating Repetition",
-      "score": 0.82,
-      "previous_score": 0.75,
-      "delta": 0.06999999999999995,
-      "status": "GOOD",
-      "assessment": "Echobeats 4-phase cycle, game tick loop, KSM 12-step cycle, hormone decay curves, Lorenz attractor oscillations."
+      "score": 0.85,
+      "cycle_0": 0.75,
+      "cycle_1": 0.82,
+      "delta_1_2": 0.030000000000000027,
+      "delta_0_2": 0.09999999999999998,
+      "status": "EXCELLENT",
+      "assessment": "Echobeats 4-phase, per-tick plugin dispatch, event emit/subscribe, hook apply chain."
     },
     {
       "id": 5,
       "name": "Positive Space",
-      "score": 0.8,
-      "previous_score": 0.7,
-      "delta": 0.10000000000000009,
-      "status": "GOOD",
-      "assessment": "All 8 centers now have functional implementations. Full 16-channel endocrine, hierarchical ESN, Lorenz chaos."
+      "score": 0.85,
+      "cycle_0": 0.7,
+      "cycle_1": 0.8,
+      "delta_1_2": 0.04999999999999993,
+      "delta_0_2": 0.15000000000000002,
+      "status": "EXCELLENT",
+      "assessment": "All centers functional. 3 example plugins fill extension space. API has 14 working routes."
     },
     {
       "id": 6,
       "name": "Good Shape",
-      "score": 0.87,
-      "previous_score": 0.85,
-      "delta": 0.020000000000000018,
+      "score": 0.88,
+      "cycle_0": 0.85,
+      "cycle_1": 0.87,
+      "delta_1_2": 0.010000000000000009,
+      "delta_0_2": 0.030000000000000027,
       "status": "EXCELLENT",
-      "assessment": "Dataclass patterns, typed interfaces, consistent logging, clean class hierarchies with single responsibility."
+      "assessment": "Clean module shapes. API Adapter provides well-shaped external interface. Plugin meta describes shape."
     },
     {
       "id": 7,
       "name": "Local Symmetries",
-      "score": 0.82,
-      "previous_score": 0.8,
-      "delta": 0.019999999999999907,
-      "status": "GOOD",
-      "assessment": "Each module follows domain-appropriate patterns: RL for MLGamer, signal processing for Avatar, linear algebra for Reservoir."
+      "score": 0.85,
+      "cycle_0": 0.8,
+      "cycle_1": 0.82,
+      "delta_1_2": 0.030000000000000027,
+      "delta_0_2": 0.04999999999999993,
+      "status": "EXCELLENT",
+      "assessment": "EventBus on/off, HookSystem add/remove, Plugin enable/disable \u2014 symmetric lifecycle pairs."
     },
     {
       "id": 8,
       "name": "Deep Interlock",
-      "score": 0.88,
-      "previous_score": 0.75,
-      "delta": 0.13,
+      "score": 0.9,
+      "cycle_0": 0.75,
+      "cycle_1": 0.88,
+      "delta_1_2": 0.020000000000000018,
+      "delta_0_2": 0.15000000000000002,
       "status": "EXCELLENT",
-      "assessment": "Bidirectional: Endocrine\u2194Avatar, Endocrine\u2194Cognitive, Reservoir\u2192Memory, Cognitive\u2192MLGamer\u2192Navigation. Subscriber bus."
+      "assessment": "Plugins interlock with core via EventBus + HookSystem. API bridges external/internal. Context dict."
     },
     {
       "id": 9,
       "name": "Contrast",
-      "score": 0.82,
-      "previous_score": 0.8,
-      "delta": 0.019999999999999907,
-      "status": "GOOD",
-      "assessment": "Distinct roles: MLGamer(tactics) vs GTAngel(navigation) vs Echo(cognition) vs SuperHotGirl(expression)."
+      "score": 0.85,
+      "cycle_0": 0.8,
+      "cycle_1": 0.82,
+      "delta_1_2": 0.030000000000000027,
+      "delta_0_2": 0.04999999999999993,
+      "status": "EXCELLENT",
+      "assessment": "Core (fixed) vs Extensions (dynamic). Events (fire-and-forget) vs Hooks (modify-and-return). Clear contrast."
     },
     {
       "id": 10,
       "name": "Gradients",
-      "score": 0.78,
-      "previous_score": 0.7,
-      "delta": 0.08000000000000007,
+      "score": 0.82,
+      "cycle_0": 0.7,
+      "cycle_1": 0.78,
+      "delta_1_2": 0.039999999999999925,
+      "delta_0_2": 0.12,
       "status": "GOOD",
-      "assessment": "Autonomy levels 2\u21926, hormone decay curves, expression blend rates, gland fatigue/recovery curves."
+      "assessment": "Priority gradients: SYSTEM\u2192HIGH\u2192NORMAL\u2192LOW\u2192MONITOR in EventBus and HookSystem."
     },
     {
       "id": 11,
       "name": "Roughness",
-      "score": 0.78,
-      "previous_score": 0.65,
-      "delta": 0.13,
+      "score": 0.8,
+      "cycle_0": 0.65,
+      "cycle_1": 0.78,
+      "delta_1_2": 0.020000000000000018,
+      "delta_0_2": 0.15000000000000002,
       "status": "GOOD",
-      "assessment": "Lorenz attractor chaos (3 separate attractors), stochastic exploration, emergent mode transitions."
+      "assessment": "Lorenz chaos, stochastic exploration, emergent plugin interactions, non-deterministic event ordering."
     },
     {
       "id": 12,
       "name": "Echoes",
-      "score": 0.87,
-      "previous_score": 0.85,
-      "delta": 0.020000000000000018,
+      "score": 0.9,
+      "cycle_0": 0.85,
+      "cycle_1": 0.87,
+      "delta_1_2": 0.030000000000000027,
+      "delta_0_2": 0.050000000000000044,
       "status": "EXCELLENT",
-      "assessment": "Reservoir echo states, memory echo retrieval, Echobeats cycle, KSM cycle, Lorenz attractor echoing."
+      "assessment": "Plugin lifecycle echoes center lifecycle. EventBus subscribe echoes endocrine subscribe. Pattern echoes."
     },
     {
       "id": 13,
       "name": "The Void",
-      "score": 0.65,
-      "previous_score": 0.6,
-      "delta": 0.050000000000000044,
-      "status": "FAIR",
-      "assessment": "Reserved hormone channels, scaffold-level autonomy (room to grow), extension points, subscriber hooks."
+      "score": 0.85,
+      "cycle_0": 0.6,
+      "cycle_1": 0.65,
+      "delta_1_2": 0.19999999999999996,
+      "delta_0_2": 0.25,
+      "status": "EXCELLENT",
+      "assessment": "MAJOR: Plugin system, event bus, 20 hook points, REST API, contrib/ directory \u2014 intentional space for growth."
     },
     {
       "id": 14,
       "name": "Simplicity and Inner Calm",
       "score": 0.78,
-      "previous_score": 0.75,
-      "delta": 0.030000000000000027,
+      "cycle_0": 0.75,
+      "cycle_1": 0.78,
+      "delta_1_2": 0.0,
+      "delta_0_2": 0.030000000000000027,
       "status": "GOOD",
-      "assessment": "Each module has single responsibility, clean interfaces, no over-engineering."
+      "assessment": "Extension architecture adds complexity but is well-encapsulated. Each extension module has single responsibility."
     },
     {
       "id": 15,
       "name": "Not-Separateness",
-      "score": 0.85,
-      "previous_score": 0.8,
-      "delta": 0.04999999999999993,
+      "score": 0.88,
+      "cycle_0": 0.8,
+      "cycle_1": 0.85,
+      "delta_1_2": 0.030000000000000027,
+      "delta_0_2": 0.07999999999999996,
       "status": "EXCELLENT",
-      "assessment": "Unified GTAngelEcho hub connects all modules. Endocrine subscriber bus. Part of DTE ecosystem."
+      "assessment": "Plugins participate in same tick loop. API exposes same state. No separate worlds. Part of DTE ecosystem."
     }
   ],
   "weakest": {
-    "id": 13,
-    "name": "The Void",
-    "score": 0.65,
-    "previous_score": 0.6,
-    "delta": 0.050000000000000044,
-    "status": "FAIR",
-    "assessment": "Reserved hormone channels, scaffold-level autonomy (room to grow), extension points, subscriber hooks."
+    "id": 14,
+    "name": "Simplicity and Inner Calm",
+    "score": 0.78,
+    "cycle_0": 0.75,
+    "cycle_1": 0.78,
+    "delta_1_2": 0.0,
+    "delta_0_2": 0.030000000000000027,
+    "status": "GOOD",
+    "assessment": "Extension architecture adds complexity but is well-encapsulated. Each extension module has single responsibility."
   },
   "strongest": {
     "id": 2,
     "name": "Strong Centres",
-    "score": 0.92,
-    "previous_score": 0.9,
-    "delta": 0.020000000000000018,
+    "score": 0.93,
+    "cycle_0": 0.9,
+    "cycle_1": 0.92,
+    "delta_1_2": 0.010000000000000009,
+    "delta_0_2": 0.030000000000000027,
     "status": "EXCELLENT",
-    "assessment": "8 living centers with clear responsibilities, all verified via integration tests (11/11 passing)."
+    "assessment": "8 core centers + 3 extension centers (EventBus, PluginRegistry, HookSystem). All strongly defined with tests."
   },
   "biggest_improvement": {
-    "id": 8,
-    "name": "Deep Interlock",
-    "score": 0.88,
-    "previous_score": 0.75,
-    "delta": 0.13,
+    "id": 13,
+    "name": "The Void",
+    "score": 0.85,
+    "cycle_0": 0.6,
+    "cycle_1": 0.65,
+    "delta_1_2": 0.19999999999999996,
+    "delta_0_2": 0.25,
     "status": "EXCELLENT",
-    "assessment": "Bidirectional: Endocrine\u2194Avatar, Endocrine\u2194Cognitive, Reservoir\u2192Memory, Cognitive\u2192MLGamer\u2192Navigation. Subscriber bus."
+    "assessment": "MAJOR: Plugin system, event bus, 20 hook points, REST API, contrib/ directory \u2014 intentional space for growth."
   }
 }
