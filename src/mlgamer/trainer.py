@@ -90,6 +90,26 @@ class MLGamerEngine:
                 action = self._heuristic_action(game_state)
                 logger.info(f"[Heuristic] Selected action: {action}")
                 
+        # Update current tactic state based on selected action
+        try:
+            # Try to map action string to TacticalState enum
+            for state in TacticalState:
+                if state.value == action:
+                    self.current_tactic = state
+                    break
+            else:
+                # Map specific actions to broader tactical states
+                if action in ["engage", "flank"]:
+                    self.current_tactic = TacticalState.COMBAT
+                elif action in ["take_cover", "retreat", "heal", "reload"]:
+                    self.current_tactic = TacticalState.EVASION
+                elif action == "loot":
+                    self.current_tactic = TacticalState.LOOTING
+                else:
+                    self.current_tactic = TacticalState.PATROL
+        except Exception:
+            pass
+            
         return action
         
     def _available_actions(self, state: GameState) -> List[str]:

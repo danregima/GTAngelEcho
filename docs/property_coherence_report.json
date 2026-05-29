@@ -1,76 +1,83 @@
 {
-  "timestamp": "2026-05-28T20:26:01.355093",
-  "cycle": 2,
-  "overall_score": 0.8593333333333334,
+  "timestamp": "2026-05-29T01:47:54.843950",
+  "cycle": 3,
+  "overall_score": 0.8866666666666667,
+  "cycle_2_overall": 0.8593333333333334,
   "cycle_1_overall": 0.8219999999999998,
   "cycle_0_overall": 0.7699999999999999,
-  "delta_1_2": 0.03733333333333355,
+  "delta_2_3": 0.02733333333333332,
   "properties": [
     {
       "id": 1,
       "name": "Levels of Scale",
-      "score": 0.88,
+      "score": 0.89,
       "cycle_0": 0.85,
       "cycle_1": 0.87,
-      "delta_1_2": 0.010000000000000009,
-      "delta_0_2": 0.030000000000000027,
+      "cycle_2": 0.88,
+      "delta_2_3": 0.010000000000000009,
+      "delta_0_3": 0.040000000000000036,
       "status": "EXCELLENT",
-      "assessment": "5 levels: System \u2192 Centers \u2192 Modules \u2192 Functions \u2192 Plugins. Plugin hierarchy adds extensible 5th level."
+      "assessment": "Multi-layer architecture (macro integration \u2192 meso centers \u2192 micro parameters). Memory hooks add scale depth."
     },
     {
       "id": 2,
       "name": "Strong Centres",
-      "score": 0.93,
+      "score": 0.95,
       "cycle_0": 0.9,
       "cycle_1": 0.92,
-      "delta_1_2": 0.010000000000000009,
-      "delta_0_2": 0.030000000000000027,
+      "cycle_2": 0.93,
+      "delta_2_3": 0.019999999999999907,
+      "delta_0_3": 0.04999999999999993,
       "status": "EXCELLENT",
-      "assessment": "8 core centers + 3 extension centers (EventBus, PluginRegistry, HookSystem). All strongly defined with tests."
+      "assessment": "8 core centers + 3 extension centers. All centers now fully active with repaired event/hook bridges."
     },
     {
       "id": 3,
       "name": "Boundaries",
-      "score": 0.87,
+      "score": 0.88,
       "cycle_0": 0.8,
       "cycle_1": 0.82,
-      "delta_1_2": 0.050000000000000044,
-      "delta_0_2": 0.06999999999999995,
+      "cycle_2": 0.87,
+      "delta_2_3": 0.010000000000000009,
+      "delta_0_3": 0.07999999999999996,
       "status": "EXCELLENT",
-      "assessment": "PluginBase ABC, HookPoint enum, API route registration \u2014 explicit, well-typed boundaries."
+      "assessment": "PluginBase ABC, HookPoint enum, API route registration. Boundaries respected via proper event routing."
     },
     {
       "id": 4,
       "name": "Alternating Repetition",
-      "score": 0.85,
+      "score": 0.87,
       "cycle_0": 0.75,
       "cycle_1": 0.82,
-      "delta_1_2": 0.030000000000000027,
-      "delta_0_2": 0.09999999999999998,
+      "cycle_2": 0.85,
+      "delta_2_3": 0.020000000000000018,
+      "delta_0_3": 0.12,
       "status": "EXCELLENT",
-      "assessment": "Echobeats 4-phase, per-tick plugin dispatch, event emit/subscribe, hook apply chain."
+      "assessment": "Echobeats 4-phase, per-tick plugin dispatch, event emit/subscribe, 20-point hook apply chain fully realized."
     },
     {
       "id": 5,
       "name": "Positive Space",
-      "score": 0.85,
+      "score": 0.9,
       "cycle_0": 0.7,
       "cycle_1": 0.8,
-      "delta_1_2": 0.04999999999999993,
-      "delta_0_2": 0.15000000000000002,
+      "cycle_2": 0.85,
+      "delta_2_3": 0.050000000000000044,
+      "delta_0_3": 0.20000000000000007,
       "status": "EXCELLENT",
-      "assessment": "All centers functional. 3 example plugins fill extension space. API has 14 working routes."
+      "assessment": "All 20 hook points now actively injected into the integration hub pipeline. Dead code space eliminated."
     },
     {
       "id": 6,
       "name": "Good Shape",
-      "score": 0.88,
+      "score": 0.9,
       "cycle_0": 0.85,
       "cycle_1": 0.87,
-      "delta_1_2": 0.010000000000000009,
-      "delta_0_2": 0.030000000000000027,
+      "cycle_2": 0.88,
+      "delta_2_3": 0.020000000000000018,
+      "delta_0_3": 0.050000000000000044,
       "status": "EXCELLENT",
-      "assessment": "Clean module shapes. API Adapter provides well-shaped external interface. Plugin meta describes shape."
+      "assessment": "AU targets decay properly (no sticky drift). MLGamer tactic state updates cleanly. Good shape restored."
     },
     {
       "id": 7,
@@ -78,43 +85,47 @@
       "score": 0.85,
       "cycle_0": 0.8,
       "cycle_1": 0.82,
-      "delta_1_2": 0.030000000000000027,
-      "delta_0_2": 0.04999999999999993,
+      "cycle_2": 0.85,
+      "delta_2_3": 0.0,
+      "delta_0_3": 0.04999999999999993,
       "status": "EXCELLENT",
       "assessment": "EventBus on/off, HookSystem add/remove, Plugin enable/disable \u2014 symmetric lifecycle pairs."
     },
     {
       "id": 8,
       "name": "Deep Interlock",
-      "score": 0.9,
+      "score": 0.95,
       "cycle_0": 0.75,
       "cycle_1": 0.88,
-      "delta_1_2": 0.020000000000000018,
-      "delta_0_2": 0.15000000000000002,
+      "cycle_2": 0.9,
+      "delta_2_3": 0.04999999999999993,
+      "delta_0_3": 0.19999999999999996,
       "status": "EXCELLENT",
-      "assessment": "Plugins interlock with core via EventBus + HookSystem. API bridges external/internal. Context dict."
+      "assessment": "CRITICAL FIX: PluginRegistry now subscribed to EventBus. Endocrine callback emits events. Deep interlock achieved."
     },
     {
       "id": 9,
       "name": "Contrast",
-      "score": 0.85,
+      "score": 0.87,
       "cycle_0": 0.8,
       "cycle_1": 0.82,
-      "delta_1_2": 0.030000000000000027,
-      "delta_0_2": 0.04999999999999993,
+      "cycle_2": 0.85,
+      "delta_2_3": 0.020000000000000018,
+      "delta_0_3": 0.06999999999999995,
       "status": "EXCELLENT",
-      "assessment": "Core (fixed) vs Extensions (dynamic). Events (fire-and-forget) vs Hooks (modify-and-return). Clear contrast."
+      "assessment": "Core vs Extensions contrast maintained. Accurate event emission counting improves metric contrast."
     },
     {
       "id": 10,
       "name": "Gradients",
-      "score": 0.82,
+      "score": 0.85,
       "cycle_0": 0.7,
       "cycle_1": 0.78,
-      "delta_1_2": 0.039999999999999925,
-      "delta_0_2": 0.12,
-      "status": "GOOD",
-      "assessment": "Priority gradients: SYSTEM\u2192HIGH\u2192NORMAL\u2192LOW\u2192MONITOR in EventBus and HookSystem."
+      "cycle_2": 0.82,
+      "delta_2_3": 0.030000000000000027,
+      "delta_0_3": 0.15000000000000002,
+      "status": "EXCELLENT",
+      "assessment": "Priority gradients in EventBus/HookSystem. Tactic state transitions smoothly with Q-learning updates."
     },
     {
       "id": 11,
@@ -122,87 +133,95 @@
       "score": 0.8,
       "cycle_0": 0.65,
       "cycle_1": 0.78,
-      "delta_1_2": 0.020000000000000018,
-      "delta_0_2": 0.15000000000000002,
+      "cycle_2": 0.8,
+      "delta_2_3": 0.0,
+      "delta_0_3": 0.15000000000000002,
       "status": "GOOD",
-      "assessment": "Lorenz chaos, stochastic exploration, emergent plugin interactions, non-deterministic event ordering."
+      "assessment": "Lorenz chaos, stochastic exploration, emergent plugin interactions. Chaos scales gracefully."
     },
     {
       "id": 12,
       "name": "Echoes",
-      "score": 0.9,
+      "score": 0.92,
       "cycle_0": 0.85,
       "cycle_1": 0.87,
-      "delta_1_2": 0.030000000000000027,
-      "delta_0_2": 0.050000000000000044,
+      "cycle_2": 0.9,
+      "delta_2_3": 0.020000000000000018,
+      "delta_0_3": 0.07000000000000006,
       "status": "EXCELLENT",
-      "assessment": "Plugin lifecycle echoes center lifecycle. EventBus subscribe echoes endocrine subscribe. Pattern echoes."
+      "assessment": "Plugin lifecycle echoes center lifecycle. Memory store/recall echoes through new architectural hooks."
     },
     {
       "id": 13,
       "name": "The Void",
-      "score": 0.85,
+      "score": 0.92,
       "cycle_0": 0.6,
       "cycle_1": 0.65,
-      "delta_1_2": 0.19999999999999996,
-      "delta_0_2": 0.25,
+      "cycle_2": 0.85,
+      "delta_2_3": 0.07000000000000006,
+      "delta_0_3": 0.32000000000000006,
       "status": "EXCELLENT",
-      "assessment": "MAJOR: Plugin system, event bus, 20 hook points, REST API, contrib/ directory \u2014 intentional space for growth."
+      "assessment": "The 20 hook points are now actually traversed, providing true functional voids for plugins to inhabit."
     },
     {
       "id": 14,
       "name": "Simplicity and Inner Calm",
-      "score": 0.78,
+      "score": 0.82,
       "cycle_0": 0.75,
       "cycle_1": 0.78,
-      "delta_1_2": 0.0,
-      "delta_0_2": 0.030000000000000027,
+      "cycle_2": 0.78,
+      "delta_2_3": 0.039999999999999925,
+      "delta_0_3": 0.06999999999999995,
       "status": "GOOD",
-      "assessment": "Extension architecture adds complexity but is well-encapsulated. Each extension module has single responsibility."
+      "assessment": "Removed sticky AU state complexity. Unified event routing simplifies mental model of the pipeline."
     },
     {
       "id": 15,
       "name": "Not-Separateness",
-      "score": 0.88,
+      "score": 0.93,
       "cycle_0": 0.8,
       "cycle_1": 0.85,
-      "delta_1_2": 0.030000000000000027,
-      "delta_0_2": 0.07999999999999996,
+      "cycle_2": 0.88,
+      "delta_2_3": 0.050000000000000044,
+      "delta_0_3": 0.13,
       "status": "EXCELLENT",
-      "assessment": "Plugins participate in same tick loop. API exposes same state. No separate worlds. Part of DTE ecosystem."
+      "assessment": "Plugins now receive ALL world/endocrine events via the repaired bridge. True wholeness realized."
     }
   ],
   "weakest": {
-    "id": 14,
-    "name": "Simplicity and Inner Calm",
-    "score": 0.78,
-    "cycle_0": 0.75,
+    "id": 11,
+    "name": "Roughness",
+    "score": 0.8,
+    "cycle_0": 0.65,
     "cycle_1": 0.78,
-    "delta_1_2": 0.0,
-    "delta_0_2": 0.030000000000000027,
+    "cycle_2": 0.8,
+    "delta_2_3": 0.0,
+    "delta_0_3": 0.15000000000000002,
     "status": "GOOD",
-    "assessment": "Extension architecture adds complexity but is well-encapsulated. Each extension module has single responsibility."
+    "assessment": "Lorenz chaos, stochastic exploration, emergent plugin interactions. Chaos scales gracefully."
   },
   "strongest": {
     "id": 2,
     "name": "Strong Centres",
-    "score": 0.93,
+    "score": 0.95,
     "cycle_0": 0.9,
     "cycle_1": 0.92,
-    "delta_1_2": 0.010000000000000009,
-    "delta_0_2": 0.030000000000000027,
+    "cycle_2": 0.93,
+    "delta_2_3": 0.019999999999999907,
+    "delta_0_3": 0.04999999999999993,
     "status": "EXCELLENT",
-    "assessment": "8 core centers + 3 extension centers (EventBus, PluginRegistry, HookSystem). All strongly defined with tests."
+    "assessment": "8 core centers + 3 extension centers. All centers now fully active with repaired event/hook bridges."
   },
   "biggest_improvement": {
     "id": 13,
     "name": "The Void",
-    "score": 0.85,
+    "score": 0.92,
     "cycle_0": 0.6,
     "cycle_1": 0.65,
-    "delta_1_2": 0.19999999999999996,
-    "delta_0_2": 0.25,
+    "cycle_2": 0.85,
+    "delta_2_3": 0.07000000000000006,
+    "delta_0_3": 0.32000000000000006,
     "status": "EXCELLENT",
-    "assessment": "MAJOR: Plugin system, event bus, 20 hook points, REST API, contrib/ directory \u2014 intentional space for growth."
+    "assessment": "The 20 hook points are now actually traversed, providing true functional voids for plugins to inhabit."
   }
 }

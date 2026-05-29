@@ -144,6 +144,10 @@ class AvatarExpressionSystem:
             self._target_aus["AU12"] = max(self._target_aus["AU12"], serotonin * 0.4)
             self._target_aus["AU4"] = max(0.0, self._target_aus["AU4"] - serotonin * 0.3)
             
+        # Decay target AUs toward zero to prevent sticky expressions
+        for au in self._target_aus:
+            self._target_aus[au] = max(0.0, self._target_aus[au] - 0.05)
+            
         # Blend current AUs toward targets
         for au in self.action_units:
             diff = self._target_aus[au] - self.action_units[au]

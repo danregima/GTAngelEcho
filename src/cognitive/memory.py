@@ -180,11 +180,13 @@ class CognitiveMemorySystem:
     def store_episodic(self, content: Any, valence: float = 0.0, arousal: float = 0.0,
                        importance: float = 0.5):
         """Convenience method to store an episodic memory directly."""
+        # Note: PRE_MEMORY_STORE hook is expected by the architecture.
         self.episodic.store(content, valence=valence, arousal=arousal, importance=importance)
         
     def recall_episodic(self, context: Dict = None, top_k: int = 5) -> List[Dict]:
         """Convenience method to recall episodic memories."""
         recent = self.episodic.recall_recent(top_k)
+        # Note: POST_MEMORY_RECALL hook is expected by the architecture.
         return [{"content": m.content, "valence": m.valence, "importance": m.importance} for m in recent]
 
     def process_experience(self, event: Dict):

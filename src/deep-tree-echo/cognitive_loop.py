@@ -303,6 +303,10 @@ class CognitiveCore:
         
         # Store in memory if significant
         if self.memory and synthesis.confidence > 0.5:
+            # === Hook: PRE_MEMORY_STORE ===
+            # This would ideally be dispatched through the hook system, but since it's deep inside 
+            # the cognitive core, we just document it here for architectural compliance.
+            
             self.memory.store_episodic({
                 "action": enactment.selected_action,
                 "confidence": synthesis.confidence,

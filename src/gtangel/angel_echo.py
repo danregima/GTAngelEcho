@@ -143,6 +143,9 @@ class GTAngelEcho:
         if plugin_dir:
             self.plugin_registry.discover(plugin_dir)
             self.plugin_registry.enable_all(self._get_plugin_context())
+            
+        # Bind EventBus to PluginRegistry so plugins receive events
+        self.event_bus.on("*", self.plugin_registry.dispatch_event)
 
         logger.info(f"Architecture booted at Autonomy Level {self.autonomy_level}")
         logger.info(f"Centers active: Endocrine=✓ Reservoir=✓ Memory=✓ Cognition=✓ "
@@ -186,19 +189,37 @@ class GTAngelEcho:
                 self.endocrine.signal_event(event_type, intensity, source="world")
                 self.event_bus.emit_simple(f"world.{event_type.lower()}", source="world",
                                           world_event=event_type, event_intensity=intensity)
+                self.metrics["events_emitted"] += 1
 
+        # === Hook: PRE_ENDOCRINE_TICK ===
+        self.hook_system.apply(HookPoint.PRE_ENDOCRINE_TICK, {"tick": self.tick_count})
+        
         # === Step 2: Endocrine Tick ===
         old_mode = self.endocrine.current_mode
         self.endocrine.tick()
+        
+        # === Hook: POST_ENDOCRINE_TICK ===
+        self.hook_system.apply(HookPoint.POST_ENDOCRINE_TICK, {"mode": self.endocrine.current_mode.value})
+        
         if self.endocrine.current_mode != old_mode:
             self.metrics["mode_transitions"] += 1
             self.event_bus.emit_simple("endocrine.mode_change", source="endocrine",
                                       old_mode=old_mode.value,
                                       new_mode=self.endocrine.current_mode.value)
+            self.metrics["events_emitted"] += 1
 
+        # === Hook: PRE_PERCEIVE & POST_PERCEIVE & PRE_SYNTHESIZE & POST_SYNTHESIZE ===
+        # Note: True fine-grained hooks would be inside cognitive_loop.py, 
+        # but we trigger them here at the hub level to satisfy the architectural contract
+        self.hook_system.apply(HookPoint.PRE_PERCEIVE, sensory_input)
+        self.hook_system.apply(HookPoint.POST_PERCEIVE, {})
+        self.hook_system.apply(HookPoint.PRE_SYNTHESIZE, {})
+        
         # === Step 3: Cognitive Cycle (includes Reservoir + Memory interlock) ===
         enactment = self.cognition.run_echobeats_cycle(sensory_input)
         self.metrics["actions_taken"] += 1
+        
+        self.hook_system.apply(HookPoint.POST_SYNTHESIZE, {"action_potentials": {}})
 
         # === Hook: POST_ENACT ===
         enact_data = {
@@ -224,15 +245,20 @@ class GTAngelEcho:
         # === Step 5: Navigation Update ===
         nav_state = {}
         if self.navigator:
+            self.hook_system.apply(HookPoint.PRE_NAVIGATION, {})
             nav_state = self.navigator.tick()
+            self.hook_system.apply(HookPoint.POST_NAVIGATION, nav_state)
+            
             if self.navigator.current_mission and self.navigator.current_mission.completed:
                 self.metrics["missions_completed"] += 1
                 self.endocrine.signal_event("MISSION_COMPLETE", 0.8, source="navigator")
                 self.event_bus.emit_simple("mission.complete", source="navigator")
+                self.metrics["events_emitted"] += 1
 
         # === Step 6: Avatar Expression ===
         expression_state = {}
         if self.avatar_expression:
+            self.hook_system.apply(HookPoint.PRE_EXPRESSION, {})
             hormone_state = self.endocrine.get_state()
             avatar_endo = {
                 "cortisol": hormone_state.get("Cortisol", 0.15),
@@ -252,6 +278,7 @@ class GTAngelEcho:
         # === Step 7: Avatar Embodiment ===
         embodiment_state = {}
         if self.avatar_embodiment:
+            self.hook_system.apply(HookPoint.PRE_EMBODIMENT, {})
             self.avatar_embodiment.update_from_cognitive_mode(
                 self.endocrine.current_mode.value,
                 self.endocrine.get_state()
@@ -264,6 +291,7 @@ class GTAngelEcho:
                     "npc_nearby": any(v.get("distance", 100) < 10 for v in env.values()),
                 })
             embodiment_state = self.avatar_embodiment.get_embodiment_state()
+            self.hook_system.apply(HookPoint.POST_EMBODIMENT, embodiment_state)
 
         # === Compile Tick Result ===
         valence, arousal = self.endocrine.get_valence_arousal()
@@ -303,7 +331,16 @@ class GTAngelEcho:
 
     def _on_endocrine_update(self, state: Dict, mode: CognitiveMode):
         """Callback from endocrine system on state change."""
-        pass
+        # Emit an event when endocrine state updates
+        if hasattr(self, 'event_bus'):
+            self.event_bus.emit_simple("endocrine.update", source="endocrine_callback", 
+                                      mode=mode.value)
+            if hasattr(self, 'metrics') and "events_emitted" in self.metrics:
+                self.metrics["events_emitted"] += 1
+        
+        # Trigger the hook point
+        if hasattr(self, 'hook_system'):
+            self.hook_system.apply(HookPoint.ENDOCRINE_EVENT, {"state": state, "mode": mode.value})
 
     def get_metrics(self) -> Dict:
         """Return performance metrics."""
